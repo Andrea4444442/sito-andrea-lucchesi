@@ -2,31 +2,21 @@
 {% block content %}
 
 <section style="margin-bottom: 40px;">
-  <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;">
-    <img 
-      src="{{ url_for('static', filename='images/foto_profilo.jpg') }}" 
-      alt="Andrea Lucchesi" 
-      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent, #007bff);"
-    />
-    <div style="flex: 1; min-width: 250px;">
-      <h1 style="margin-top: 0;">Andrea Lucchesi</h1>
-      <p class="lead" style="margin-bottom: 8px;">
-        Laureato magistrale in <strong>Corporate Finance</strong>. Supporto decisioni aziendali con analisi finanziaria,
-        valutazione d'impresa e un approccio data-driven.
-      </p>
-      <p class="muted" style="max-width: 860px; margin-bottom: 0;">
-        Obiettivo: ruolo <strong>Junior Corporate Finance Analyst</strong> in una realtà strutturata, con standard elevati e
-        opportunità di crescita.
-      </p>
-    </div>
-  </div>
+  <h1>Andrea Lucchesi</h1>
+  <p class="lead">
+    Laureato magistrale in <strong>Corporate Finance</strong>. Supporto decisioni aziendali con analisi finanziaria,
+    valutazione d’impresa e un approccio data-driven.
+  </p>
+  <p class="muted" style="max-width: 860px;">
+    Obiettivo: ruolo <strong>Junior Corporate Finance Analyst</strong> in una realtà strutturata, con standard elevati e
+    opportunità di crescita.
+  </p>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap;">
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
     <a class="btn primary" href="{{ url_for('contatti') }}">Contattami</a>
     <a class="btn" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn" href="{{ url_for('static', filename='CV_Andrea_Lucchesi.pdf') }}">Scarica CV</a>
     <a class="btn" href="{{ url_for('static', filename='tesi_magistrale_greenwashing.pdf') }}">Scarica la tesi</a>
-    <a class="btn" href="{{ url_for('static', filename='presentazione.pdf') }}">Scarica presentazione</a>
   </div>
 </section>
 
