@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="wrap header">
-    <a class="logo" href="{{ url_for('home') }}">Il Mio Nome</a>
+    <a class="logo" href="{{ url_for('home') }}">Andrea Lucchesi</a>
     <nav class="nav">
       <a class="{% if request.path == url_for('home') %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
       <a class="{% if request.path == url_for('chi_sono') %}active{% endif %}" href="{{ url_for('chi_sono') }}">Chi sono</a>
@@ -32,7 +32,7 @@
   </main>
 
   <footer class="wrap footer">
-    © <span id="year"></span> Il tuo nome — Tutti i diritti riservati
+    © <span id="year"></span> Andrea Lucchesi — Tutti i diritti riservati
   </footer>
 
   <script>
