@@ -356,6 +356,7 @@ button[type="submit"]:hover {
 
   .hero-text .lead {
     text-align: center;
+    margin-bottom: 32px;
   }
 }
 
