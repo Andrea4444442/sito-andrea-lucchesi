@@ -9,7 +9,6 @@
 </head>
 <body>
   <header class="wrap header">
-    <a class="logo" href="{{ url_for('home') }}">Andrea Lucchesi</a>
     <nav class="nav">
       <a class="{% if request.path == url_for('home') %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
       <a class="{% if request.path == url_for('chi_sono') %}active{% endif %}" href="{{ url_for('chi_sono') }}">Chi sono</a>
