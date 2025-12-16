@@ -1,9 +1,9 @@
 import os
 import smtplib
-import logging
+import io
 from email.message import EmailMessage
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file, Response
 from dotenv import load_dotenv
 
 load_dotenv()  # legge il file .env
@@ -11,45 +11,23 @@ load_dotenv()  # legge il file .env
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "chiave-segreta-cambiami-in-produzione")
 
-# Configurazione logging per produzione
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 
 def _smtp_send(msg: EmailMessage) -> None:
     host = os.environ.get("MAIL_HOST", "smtp.gmail.com")
     port = int(os.environ.get("MAIL_PORT", "587"))
-    user = os.environ.get("MAIL_USER")
-    password = os.environ.get("MAIL_PASS")
-    
-    if not user or not password:
-        raise ValueError("MAIL_USER e MAIL_PASS devono essere configurati nelle variabili d'ambiente")
-    
-    logger.info(f"Tentativo invio email a {msg['To']} via {host}:{port}")
-    
-    try:
-        with smtplib.SMTP(host, port) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(user, password)
-            server.send_message(msg)
-        logger.info(f"Email inviata con successo a {msg['To']}")
-    except smtplib.SMTPAuthenticationError as e:
-        logger.error(f"Errore autenticazione SMTP: {e}")
-        raise
-    except smtplib.SMTPException as e:
-        logger.error(f"Errore SMTP: {e}")
-        raise
-    except Exception as e:
-        logger.error(f"Errore generico invio email: {e}")
-        raise
+    user = os.environ["MAIL_USER"]
+    password = os.environ["MAIL_PASS"]
+
+    with smtplib.SMTP(host, port) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(user, password)
+        server.send_message(msg)
 
 
 def send_contact_emails(nome: str, email: str, messaggio: str) -> None:
-    user = os.environ.get("MAIL_USER")
-    if not user:
-        raise ValueError("MAIL_USER deve essere configurato")
+    user = os.environ["MAIL_USER"]
     to_addr = os.environ.get("MAIL_TO", user)
 
     # 1) Email a te (notifica)
@@ -93,6 +71,42 @@ def chi_sono():
     return render_template("chi-sono.html", title="Chi sono")
 
 
+@app.route("/qr-code")
+def qr_code():
+    """Genera un QR code che punta al sito"""
+    try:
+        import qrcode
+        from PIL import Image
+        
+        # URL del sito
+        site_url = os.environ.get("SITE_URL", request.url_root.rstrip('/'))
+        
+        # Crea il QR code
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(site_url)
+        qr.make(fit=True)
+        
+        # Crea l'immagine con colori del tema
+        img = qr.make_image(fill_color="#5eead4", back_color="#0b1220")
+        
+        # Salva in memoria
+        img_io = io.BytesIO()
+        img.save(img_io, 'PNG')
+        img_io.seek(0)
+        
+        return send_file(img_io, mimetype='image/png')
+    except ImportError:
+        # Se le librerie non sono installate, usa un servizio esterno
+        site_url = os.environ.get("SITE_URL", request.url_root.rstrip('/'))
+        from urllib.parse import quote
+        return redirect(f"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={quote(site_url)}")
+
+
 @app.route("/contatti", methods=["GET", "POST"])
 def contatti():
     if request.method == "POST":
@@ -110,16 +124,8 @@ def contatti():
 
         try:
             send_contact_emails(nome, email, messaggio)
-        except KeyError as e:
-            logger.error(f"Variabile d'ambiente mancante: {e}")
-            flash("Errore di configurazione del server. Contattami direttamente via email.", "error")
-            return redirect(url_for("contatti"))
-        except smtplib.SMTPAuthenticationError:
-            logger.error("Errore autenticazione email: credenziali non valide")
-            flash("Errore nell'invio email. Contattami direttamente via email.", "error")
-            return redirect(url_for("contatti"))
         except Exception as e:
-            logger.error(f"ERRORE INVIO EMAIL: {repr(e)}", exc_info=True)
+            print("ERRORE INVIO EMAIL:", repr(e))
             flash("Errore nell'invio email. Riprova o contattami via email direttamente.", "error")
             return redirect(url_for("contatti"))
 
@@ -130,8 +136,7 @@ def contatti():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(debug=True)
 
 
 

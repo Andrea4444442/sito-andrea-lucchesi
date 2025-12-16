@@ -31,9 +31,17 @@
     </p>
   </div>
 
-  <div style="display:flex; gap:12px; flex-wrap:wrap;">
+  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items: center;">
     <a class="btn primary" href="{{ url_for('contatti') }}">Contattami</a>
     <a class="btn" href="{{ url_for('static', filename='CV_Andrea_Lucchesi.pdf') }}">Scarica CV</a>
+    <div style="margin-left: auto; text-align: center;">
+      <img 
+        src="{{ url_for('qr_code') }}" 
+        alt="QR Code" 
+        style="width: 100px; height: 100px; border-radius: 8px; border: 2px solid var(--accent, #5eead4);"
+      />
+      <p style="margin-top: 8px; font-size: 12px; color: var(--muted);">Scansiona per condividere</p>
+    </div>
   </div>
 </section>
 
