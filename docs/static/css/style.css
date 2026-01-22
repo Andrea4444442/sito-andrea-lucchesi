@@ -389,6 +389,12 @@ button[type="submit"]:hover {
   min-width: 250px;
 }
 
+.project-date {
+  margin-bottom: 12px;
+  font-style: italic;
+  text-align: right;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {
