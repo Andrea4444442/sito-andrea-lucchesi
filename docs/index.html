@@ -16,7 +16,7 @@
     </nav>
     <div class="lang-select">
       <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false">🇮🇹 IT</button>
-      <div class="lang-options" role="menu">
+      <div class="lang-options" role="menu" hidden>
         <button class="lang-btn" type="button" data-lang="it" role="menuitem">🇮🇹 IT</button>
         <button class="lang-btn" type="button" data-lang="en" role="menuitem">🇬🇧 EN</button>
         <button class="lang-btn" type="button" data-lang="de" role="menuitem">🇩🇪 DE</button>
@@ -36,20 +36,23 @@
         <div class="hero-text">
           <h1 style="margin-top: 0;">Andrea Lucchesi</h1>
           <p class="lead" style="margin-bottom: 0; font-size: 22px; color: var(--txt); font-weight: 600;" data-i18n="hero.role">
-            Corporate Finance Analyst
+            Student of Corporate Finance
           </p>
         </div>
       </div>
 
       <div style="margin-top: 32px; margin-bottom: 32px;">
         <p class="muted" style="max-width: 860px; margin-bottom: 16px;" data-i18n="hero.p1">
-          Sono un laureato magistrale in Corporate Finance con una solida formazione quantitativa in analisi della performance aziendale, valutazione d'impresa e analisi econometrica dei dati finanziari.
+          Sono un neolaureato magistrale in Corporate Finance, appassionato di analisi finanziaria, valutazione d'impresa e studio dei meccanismi che collegano le scelte strategiche delle aziende ai risultati economici.
         </p>
         <p class="muted" style="max-width: 860px; margin-bottom: 16px;" data-i18n="hero.p2">
-          Il mio profilo è orientato allo studio e all'interpretazione dei meccanismi economico-finanziari che collegano le scelte strategiche delle imprese ai risultati di performance, con particolare attenzione ai temi ESG e alla sostenibilità.
+          Durante il mio percorso ho lavorato su modelli finanziari, analisi quantitative e progetti di business planning, sviluppando un approccio rigoroso, data-driven e orientato alle decisioni.
         </p>
-        <p class="muted" style="max-width: 860px; margin-bottom: 0;" data-i18n="hero.p3">
-          Affronto i problemi finanziari con un approccio rigoroso, data-driven e orientato alle decisioni, integrando analisi numerica, contesto normativo e lettura economica dei risultati.
+        <p class="muted" style="max-width: 860px; margin-bottom: 16px;" data-i18n="hero.p3">
+          Questo sito raccoglie ciò che sto costruendo: le competenze che sto sviluppando, i progetti che ho realizzato e il modo in cui affronto i problemi finanziari.
+        </p>
+        <p class="muted" style="max-width: 860px; margin-bottom: 0;" data-i18n="hero.p4">
+          Non rappresenta ciò che sono “già diventato”, ma la direzione in cui sto andando.
         </p>
       </div>
 
@@ -146,10 +149,11 @@
         "nav.home": "Home",
         "nav.about": "Chi sono",
         "nav.contact": "Contatti",
-        "hero.role": "Corporate Finance Analyst",
-        "hero.p1": "Sono un laureato magistrale in Corporate Finance con una solida formazione quantitativa in analisi della performance aziendale, valutazione d'impresa e analisi econometrica dei dati finanziari.",
-        "hero.p2": "Il mio profilo è orientato allo studio e all'interpretazione dei meccanismi economico-finanziari che collegano le scelte strategiche delle imprese ai risultati di performance, con particolare attenzione ai temi ESG e alla sostenibilità.",
-        "hero.p3": "Affronto i problemi finanziari con un approccio rigoroso, data-driven e orientato alle decisioni, integrando analisi numerica, contesto normativo e lettura economica dei risultati.",
+        "hero.role": "Student of Corporate Finance",
+        "hero.p1": "Sono un neolaureato magistrale in Corporate Finance, appassionato di analisi finanziaria, valutazione d'impresa e studio dei meccanismi che collegano le scelte strategiche delle aziende ai risultati economici.",
+        "hero.p2": "Durante il mio percorso ho lavorato su modelli finanziari, analisi quantitative e progetti di business planning, sviluppando un approccio rigoroso, data-driven e orientato alle decisioni.",
+        "hero.p3": "Questo sito raccoglie ciò che sto costruendo: le competenze che sto sviluppando, i progetti che ho realizzato e il modo in cui affronto i problemi finanziari.",
+        "hero.p4": "Non rappresenta ciò che sono “già diventato”, ma la direzione in cui sto andando.",
         "hero.cta.contact": "Contattami",
         "hero.cta.cv": "Scarica CV",
         "skills.title": "Competenze professionali",
@@ -294,6 +298,7 @@
     const buttons = document.querySelectorAll("[data-lang]");
     const langSelect = document.querySelector(".lang-select");
     const langToggle = document.querySelector(".lang-toggle");
+    const langOptions = document.querySelector(".lang-options");
     const langLabels = {
       it: "🇮🇹 IT",
       en: "🇬🇧 EN",
@@ -327,6 +332,9 @@
         if (langSelect) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     });
@@ -335,11 +343,17 @@
       langToggle.addEventListener("click", () => {
         const isOpen = langSelect.classList.toggle("open");
         langToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (langOptions) {
+          langOptions.hidden = !isOpen;
+        }
       });
       document.addEventListener("click", (event) => {
         if (!langSelect.contains(event.target)) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     }
