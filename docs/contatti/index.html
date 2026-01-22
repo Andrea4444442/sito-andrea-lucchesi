@@ -9,17 +9,18 @@
 </head>
 <body>
   <header class="wrap header">
-    <div class="header-actions">
-      <nav class="nav">
-        <a href="../index.html" data-i18n="nav.home">Home</a>
-        <a href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
-        <a class="active" href="../contatti/" data-i18n="nav.contact">Contatti</a>
-      </nav>
-      <div class="lang-switch" role="group" aria-label="Lingua">
-        <button class="lang-btn" type="button" data-lang="it">IT</button>
-        <button class="lang-btn" type="button" data-lang="en">EN</button>
-        <button class="lang-btn" type="button" data-lang="de">DE</button>
-        <button class="lang-btn" type="button" data-lang="fr">FR</button>
+    <nav class="nav">
+      <a href="../index.html" data-i18n="nav.home">Home</a>
+      <a href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
+      <a class="active" href="../contatti/" data-i18n="nav.contact">Contatti</a>
+    </nav>
+    <div class="lang-select">
+      <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false">🇮🇹 IT</button>
+      <div class="lang-options" role="menu">
+        <button class="lang-btn" type="button" data-lang="it" role="menuitem">🇮🇹 IT</button>
+        <button class="lang-btn" type="button" data-lang="en" role="menuitem">🇬🇧 EN</button>
+        <button class="lang-btn" type="button" data-lang="de" role="menuitem">🇩🇪 DE</button>
+        <button class="lang-btn" type="button" data-lang="fr" role="menuitem">🇫🇷 FR</button>
       </div>
     </div>
   </header>
@@ -119,6 +120,14 @@
     };
 
     const buttons = document.querySelectorAll("[data-lang]");
+    const langSelect = document.querySelector(".lang-select");
+    const langToggle = document.querySelector(".lang-toggle");
+    const langLabels = {
+      it: "🇮🇹 IT",
+      en: "🇬🇧 EN",
+      de: "🇩🇪 DE",
+      fr: "🇫🇷 FR"
+    };
     const storedLang = localStorage.getItem("lang");
     const urlLang = new URLSearchParams(window.location.search).get("lang");
     const initialLang = translations[urlLang] ? urlLang : (translations[storedLang] ? storedLang : "it");
@@ -134,12 +143,34 @@
       buttons.forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.lang === lang);
       });
+      if (langToggle) {
+        langToggle.textContent = langLabels[lang] || lang;
+      }
       localStorage.setItem("lang", lang);
     };
 
     buttons.forEach((btn) => {
-      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+      btn.addEventListener("click", () => {
+        applyLang(btn.dataset.lang);
+        if (langSelect) {
+          langSelect.classList.remove("open");
+          langToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
+
+    if (langToggle && langSelect) {
+      langToggle.addEventListener("click", () => {
+        const isOpen = langSelect.classList.toggle("open");
+        langToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      document.addEventListener("click", (event) => {
+        if (!langSelect.contains(event.target)) {
+          langSelect.classList.remove("open");
+          langToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
 
     applyLang(initialLang);
   </script>

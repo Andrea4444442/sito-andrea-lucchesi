@@ -34,7 +34,7 @@ a {
 .header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 16px;
   padding: 20px 0;
   margin-bottom: 40px;
@@ -53,24 +53,50 @@ a {
   gap: 20px;
 }
 
-.header-actions {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+.lang-select {
+  position: relative;
 }
 
-.lang-switch {
-  display: flex;
+.lang-toggle {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: var(--txt);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-options {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  display: none;
+  min-width: 140px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 6px;
+  z-index: 10;
+}
+
+.lang-select.open .lang-options {
+  display: grid;
   gap: 6px;
-  align-items: center;
 }
 
 .lang-btn {
-  padding: 6px 10px;
+  width: 100%;
+  padding: 8px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: transparent;
   color: var(--muted);
   font-size: 12px;
@@ -78,6 +104,10 @@ a {
   letter-spacing: 0.4px;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
 }
 
 .lang-btn:hover {
@@ -370,11 +400,6 @@ button[type="submit"]:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-  }
-
-  .header-actions {
-    width: 100%;
-    justify-content: space-between;
   }
 
   .nav {
