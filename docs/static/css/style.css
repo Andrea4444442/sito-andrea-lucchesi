@@ -28,7 +28,7 @@ body.page-home {
 }
 
 body.page-projects {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg-v2.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg-v3.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
