@@ -564,5 +564,12 @@ button[type="submit"]:hover {
   body.page-contact {
     background-attachment: scroll;
   }
+
+  body.page-home {
+    background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/home-bg-mobile-v1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
