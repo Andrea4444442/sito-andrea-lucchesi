@@ -403,25 +403,25 @@ p {
   color: var(--muted);
 }
 
-.intro-open .hero-mini {
+.header-swap .hero-mini {
   display: flex !important;
 }
 
-.intro-open .hero-header {
+.header-swap .hero-header {
   display: none !important;
 }
 
-.intro-open .header {
+.header-swap .header {
   justify-content: flex-start !important;
 }
 
-.intro-open .hero-mini {
+.header-swap .hero-mini {
   order: 0;
   margin-right: 0;
   margin-left: 0;
 }
 
-.intro-open .header-left {
+.header-swap .header-left {
   order: 1;
   margin-left: auto !important;
   margin-right: 0 !important;
