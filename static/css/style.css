@@ -155,6 +155,12 @@ p {
   margin: 0 0 18px;
 }
 
+.project-date {
+  font-style: italic;
+  text-align: right;
+  margin-top: 8px;
+}
+
 /* Buttons */
 .btns {
   display: flex;
