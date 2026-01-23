@@ -410,13 +410,13 @@
       }
     };
 
-    const introUnlocked = localStorage.getItem("introUnlocked") === "1";
+    const introUnlocked = sessionStorage.getItem("introUnlocked") === "1";
     applyIntroState(introUnlocked);
 
     const introButton = document.getElementById("intro-cta-btn");
     if (introButton) {
       introButton.addEventListener("click", () => {
-        localStorage.setItem("introUnlocked", "1");
+        sessionStorage.setItem("introUnlocked", "1");
         applyIntroState(true);
       });
     }
