@@ -19,6 +19,7 @@ body {
   background: var(--bg);
   color: var(--txt);
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 
 body.page-home {
@@ -744,7 +745,7 @@ button[type="submit"]:hover {
     justify-content: flex-end;
     text-align: right;
     order: 1;
-    margin-top: 52px;
+    margin-top: 72px;
     padding-right: 2px;
   }
 
