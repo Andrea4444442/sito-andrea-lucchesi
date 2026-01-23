@@ -66,6 +66,12 @@ a {
   margin-bottom: 40px;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .header.wrap {
   max-width: none;
   padding-left: 24px;
@@ -397,11 +403,11 @@ p {
 }
 
 .intro-open .header {
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .intro-open .nav {
-  margin-right: auto;
+  margin-right: 0;
 }
 
 .intro-locked .tight-text {
