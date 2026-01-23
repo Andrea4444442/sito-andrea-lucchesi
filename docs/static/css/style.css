@@ -342,7 +342,7 @@ p {
 .intro-locked .footer,
 .intro-locked .home-full,
 .intro-locked .hero-ctas {
-  display: none;
+  display: none !important;
 }
 
 .intro-locked .tight-text {
@@ -366,6 +366,7 @@ p {
 
 .intro-locked main > section {
   margin-bottom: 0;
+  width: 100%;
 }
 
 .accent-orange {
