@@ -327,6 +327,23 @@ p {
   margin-top: 24px;
 }
 
+.intro-cta {
+  display: none;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.intro-locked .intro-cta {
+  display: flex;
+}
+
+.intro-locked .header,
+.intro-locked .footer,
+.intro-locked .home-full,
+.intro-locked .hero-ctas {
+  display: none;
+}
+
 .accent-orange {
   color: #f59e0b;
 }

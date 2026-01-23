@@ -7,7 +7,7 @@
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
   <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body class="page-home">
+<body class="page-home intro-locked">
   <div class="mobile-hero-bg" aria-hidden="true">
     <img src="static/images/home-mobile-inline-v1.png" alt="">
   </div>
@@ -66,9 +66,13 @@
           <a class="btn primary" href="contatti/" data-i18n="hero.cta.contact">Contattami</a>
           <a class="btn" href="static/CV_Andrea_Lucchesi.pdf" data-i18n="hero.cta.cv">Scarica CV</a>
         </div>
+        <div class="intro-cta">
+          <button class="btn primary" id="intro-cta-btn">Clicca</button>
+        </div>
       </div>
     </section>
 
+    <div class="home-full">
     <section class="card text-center tight-text" style="margin-bottom: 40px;">
       <h2 class="text-center title-space" data-i18n="goal.title">Obiettivo professionale</h2>
       <p class="muted" style="margin-bottom: 16px;" data-i18n="goal.p1">
@@ -137,6 +141,7 @@
         <p style="margin-top: 12px; font-size: 14px; color: var(--muted);" data-i18n="qr.caption">Scansiona per condividere il sito</p>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="wrap footer">
@@ -377,6 +382,13 @@
     }
 
     applyLang(initialLang);
+
+    const introButton = document.getElementById("intro-cta-btn");
+    if (introButton) {
+      introButton.addEventListener("click", () => {
+        document.body.classList.remove("intro-locked");
+      });
+    }
   </script>
 </body>
 </html>
