@@ -763,6 +763,15 @@ button[type="submit"]:hover {
     align-items: center;
   }
 
+  .page-home .header {
+    justify-content: space-between;
+  }
+
+  .page-home .header-left {
+    align-items: flex-end;
+    text-align: right;
+  }
+
   /* Hero centrato su mobile */
   .hero-centered {
     display: flex;
