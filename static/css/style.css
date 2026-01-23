@@ -418,11 +418,13 @@ p {
 }
 
 .header-swap:not(.page-home) .hero-mini {
-  margin-right: 0;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .header-swap:not(.page-home) .header-left {
   margin-left: auto;
+  margin-right: 0;
   text-align: right;
   align-items: center;
 }
