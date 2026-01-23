@@ -28,7 +28,7 @@ body.page-home {
 }
 
 body.page-projects {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg-v2.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -36,7 +36,7 @@ body.page-projects {
 }
 
 body.page-contact {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/contact-bg.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/contact-bg-v2.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
