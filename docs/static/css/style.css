@@ -727,6 +727,7 @@ button[type="submit"]:hover {
     gap: 12px;
     position: relative;
     padding-top: 8px;
+    padding-bottom: 18px;
   }
 
   .lang-select {
@@ -745,7 +746,7 @@ button[type="submit"]:hover {
     padding-right: 0;
     width: 100%;
     order: 2;
-    margin-top: 12px;
+    margin-top: 18px;
   }
 
   .nav {
@@ -753,7 +754,7 @@ button[type="submit"]:hover {
     justify-content: center;
     text-align: center;
     order: 0;
-    margin-top: 6px;
+    margin-top: 12px;
     padding-right: 0;
     flex-wrap: wrap;
     column-gap: 10px;
@@ -777,7 +778,7 @@ button[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 18px;
   }
 
   .page-home .header {
