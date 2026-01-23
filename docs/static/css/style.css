@@ -572,7 +572,7 @@ button[type="submit"]:hover {
 
   .hero-text h1,
   .hero-role {
-    display: inline;
+    display: block;
     font-size: 22px;
   }
 
@@ -581,7 +581,7 @@ button[type="submit"]:hover {
   }
   
   .hero-role {
-    margin-left: 8px;
+    margin-top: 6px;
   }
 
   .hero-header {
