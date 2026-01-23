@@ -357,6 +357,17 @@ p {
   margin-top: 24px;
 }
 
+.intro-locked main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-locked main > section {
+  margin-bottom: 0;
+}
+
 .accent-orange {
   color: #f59e0b;
 }
