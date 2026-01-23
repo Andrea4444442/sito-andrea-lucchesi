@@ -736,6 +736,7 @@ button[type="submit"]:hover {
     justify-content: center;
     gap: 10px;
     text-align: right;
+    padding-right: 6px;
   }
 
   .nav {
@@ -744,6 +745,11 @@ button[type="submit"]:hover {
     text-align: right;
     order: 1;
     margin-top: 12px;
+    padding-right: 2px;
+  }
+
+  .lang-select {
+    padding-right: 2px;
   }
 
   .hero-mini {
