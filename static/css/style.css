@@ -411,6 +411,19 @@ p {
   display: none !important;
 }
 
+.intro-open .header {
+  justify-content: space-between !important;
+}
+
+.intro-open .hero-mini {
+  margin-right: auto;
+}
+
+.intro-open .header-left {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 
 .intro-locked .tight-text {
   display: none;
