@@ -412,21 +412,24 @@ p {
 }
 
 .header-swap .header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-swap .hero-mini {
-  order: 0;
-  margin: 0;
+  margin-right: 0;
 }
 
 .header-swap .header-left {
-  order: 2;
-  justify-self: end;
+  margin-left: auto;
   text-align: right;
-  margin: 0;
+  align-items: center;
+}
+
+.header-swap .nav,
+.header-swap .lang-select {
+  justify-content: flex-end;
 }
 
 
