@@ -60,7 +60,7 @@ a {
 .header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 16px;
   padding: 20px 0;
   margin-bottom: 40px;
@@ -73,18 +73,11 @@ a {
   flex: 0 0 auto;
   justify-content: flex-start;
   text-align: left;
-}
-
-.header-row {
-  justify-content: flex-start;
-}
-
-.header-row .header-left {
   margin-left: auto;
 }
 
-.header-row .hero-mini {
-  margin-left: 0;
+.header-row {
+  justify-content: space-between;
 }
 
 .header.wrap {
