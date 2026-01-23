@@ -267,6 +267,10 @@ p {
   margin-right: auto;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .btns-right {
   justify-content: flex-end;
 }
