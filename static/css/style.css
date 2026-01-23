@@ -272,7 +272,7 @@ p {
 }
 
 .tight-text p {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .tight-text p:last-child {
