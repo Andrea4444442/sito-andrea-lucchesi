@@ -136,6 +136,12 @@ h1 {
   font-weight: 800;
 }
 
+.hero-role {
+  font-size: 28px;
+  color: var(--txt);
+  font-weight: 700;
+}
+
 h2 {
   font-size: 28px;
   margin: 0 0 12px;
