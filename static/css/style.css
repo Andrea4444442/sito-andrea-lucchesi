@@ -827,13 +827,13 @@ button[type="submit"]:hover {
   .page-home .accordion summary {
     height: 110px;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 20px;
   }
 
   .page-home .accordion summary strong {
     display: block;
     line-height: 1.2;
+    flex: 1;
   }
 
   .page-projects .accordion summary h2 {
