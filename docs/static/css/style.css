@@ -824,6 +824,10 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .accordion {
+    min-height: 140px;
+  }
+
   .accordion summary {
     height: 130px;
     align-items: center;
