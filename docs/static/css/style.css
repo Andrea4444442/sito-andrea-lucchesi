@@ -395,28 +395,29 @@ p {
 }
 
 .intro-open .hero-mini {
-  display: flex;
+  display: flex !important;
+  margin-left: auto;
 }
 
 .intro-open .hero-header {
-  display: none;
+  display: none !important;
 }
 
 .intro-open .header {
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .intro-open .header-left {
   margin-right: auto;
+  flex: 0 0 auto;
+  align-items: flex-start;
 }
 
 .intro-open .nav {
   margin-right: 0;
 }
 
-.intro-open .hero-mini {
-  margin-left: 0;
-}
 
 .intro-locked .tight-text {
   display: none;
