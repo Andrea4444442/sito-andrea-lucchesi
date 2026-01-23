@@ -73,7 +73,7 @@ a {
   flex: 0 0 auto;
   justify-content: flex-start;
   text-align: left;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .header-row {
