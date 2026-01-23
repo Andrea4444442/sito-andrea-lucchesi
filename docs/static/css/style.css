@@ -407,7 +407,7 @@ p {
 }
 
 .intro-open .header {
-  justify-content: flex-start !important;
+  justify-content: space-between !important;
   align-items: center !important;
 }
 
@@ -415,6 +415,17 @@ p {
   margin-right: 0 !important;
   justify-content: flex-start;
   align-items: center !important;
+}
+
+.intro-open .hero-mini {
+  order: 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.intro-open .header-left {
+  order: 1;
+  margin-left: auto;
 }
 
 .intro-open .nav {
