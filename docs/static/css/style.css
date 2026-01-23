@@ -271,7 +271,12 @@ p {
   justify-content: flex-end;
 }
 
+.tight-text {
+  text-align: center;
+}
+
 .tight-text p {
+  text-align: center !important;
   margin: 0 !important;
 }
 
