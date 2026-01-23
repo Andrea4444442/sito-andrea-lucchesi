@@ -436,6 +436,10 @@ button[type="submit"]:hover {
   min-width: 250px;
 }
 
+.hero-centered {
+  justify-content: center;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {
