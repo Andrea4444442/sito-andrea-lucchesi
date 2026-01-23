@@ -500,36 +500,69 @@ button[type="submit"]:hover {
 
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 12px;
+  }
+
+  .lang-select {
+    order: 0;
   }
 
   .nav {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
+    text-align: right;
+    order: 1;
   }
 
   /* Hero centrato su mobile */
+  .hero-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-centered::after {
+    content: none;
+  }
+
   .hero-header {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .hero-text {
     min-width: auto;
+    text-align: center;
   }
 
-  .hero-text h1 {
-    text-align: center;
+  .hero-text h1,
+  .hero-role {
+    display: inline;
+    font-size: 22px;
   }
 
   .hero-text .lead {
-    text-align: center;
-    margin-bottom: 48px !important;
+    margin-bottom: 20px !important;
   }
   
+  .hero-role {
+    margin-left: 8px;
+  }
+
   .hero-header {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+  }
+
+  .btns-right {
+    justify-content: center;
+  }
+
+  body.page-home,
+  body.page-projects,
+  body.page-contact {
+    background-attachment: scroll;
   }
 }
 
