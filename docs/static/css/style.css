@@ -824,12 +824,12 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
-  .accordion {
-    min-height: 140px;
+  .page-home .accordion {
+    height: 140px;
   }
 
-  .accordion summary {
-    height: 130px;
+  .page-home .accordion summary {
+    height: 100%;
     align-items: center;
     padding: 0 20px;
     overflow: hidden;
