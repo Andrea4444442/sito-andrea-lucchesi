@@ -374,20 +374,41 @@ p {
   margin-top: 24px;
 }
 
-@media (min-width: 601px) {
+@media (min-width: 901px) {
+  .intro-open .header {
+    position: relative;
+  }
+
   .intro-open .hero-header {
-    position: fixed;
-    top: 16px;
-    right: 16px;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
     margin: 0;
     z-index: 6;
     flex-direction: row;
-    justify-content: flex-end;
+    gap: 12px;
     text-align: right;
   }
 
   .intro-open .hero-text {
     text-align: right;
+  }
+
+  .intro-open .hero-photo {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+
+  .intro-open .hero-text h1 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .intro-open .hero-role {
+    font-size: 13px;
+    margin: 0;
   }
 }
 
