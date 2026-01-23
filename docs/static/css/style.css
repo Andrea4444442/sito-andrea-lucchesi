@@ -440,6 +440,12 @@ button[type="submit"]:hover {
   justify-content: center;
 }
 
+.thesis-topic {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {
