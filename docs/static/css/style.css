@@ -746,11 +746,11 @@ button[type="submit"]:hover {
     text-align: right;
     order: 1;
     margin-top: 48px;
-    padding-right: 2px;
+    padding-right: 14px;
   }
 
   .lang-select {
-    padding-right: 6px;
+    padding-right: 14px;
   }
 
   .lang-toggle {
