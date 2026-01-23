@@ -244,6 +244,10 @@ p {
   margin-top: 16px;
 }
 
+.skills-body {
+  white-space: pre-line;
+}
+
 .accordion-right summary {
   justify-content: flex-end;
 }
