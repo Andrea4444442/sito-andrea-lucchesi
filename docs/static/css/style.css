@@ -60,7 +60,7 @@ a {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
   padding: 20px 0;
   margin-bottom: 40px;
@@ -70,8 +70,9 @@ a {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   justify-content: flex-start;
+  text-align: left;
 }
 
 .header.wrap {
@@ -375,6 +376,7 @@ p {
   align-items: center;
   gap: 10px;
   margin-left: auto;
+  flex: 0 0 auto;
 }
 
 .hero-mini img {
@@ -405,7 +407,7 @@ p {
 }
 
 .intro-open .header {
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   align-items: center !important;
 }
 
