@@ -826,11 +826,17 @@ button[type="submit"]:hover {
 
   .page-home .skills-card {
     height: 140px;
+    min-height: 140px;
+    max-height: 140px;
+    box-sizing: border-box;
     overflow: hidden;
   }
 
   .page-home .skills-card summary {
-    height: 100%;
+    height: 140px;
+    min-height: 140px;
+    max-height: 140px;
+    box-sizing: border-box;
     align-items: center;
     padding: 0 20px;
     overflow: hidden;
@@ -838,6 +844,7 @@ button[type="submit"]:hover {
 
   .page-home .skills-card[open] {
     height: auto;
+    max-height: none;
   }
 
   .page-home .accordion summary strong {
