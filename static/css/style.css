@@ -348,31 +348,12 @@ p {
   display: none;
 }
 
-.intro-locked main {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.intro-locked main > section {
-  margin-bottom: 0;
-}
-
-.intro-locked .card {
-  width: min(720px, 90%);
-}
-
 .intro-locked .hero-ctas {
   display: none;
 }
 
 .intro-locked .intro-cta {
   margin-top: 24px;
-}
-
-.goal-card {
-  padding-top: 40px;
 }
 
 .accent-orange {
