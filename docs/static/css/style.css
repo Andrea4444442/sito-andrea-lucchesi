@@ -824,6 +824,15 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .page-home .accordion summary {
+    min-height: 84px;
+    align-items: center;
+  }
+
+  .page-home .accordion summary strong {
+    display: block;
+  }
+
   .page-projects .accordion summary h2 {
     text-align: left;
     width: 100%;
