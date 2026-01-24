@@ -815,6 +815,11 @@ button[type="submit"]:hover {
     justify-content: flex-start !important;
   }
 
+  .page-home.intro-open .hero-mini img {
+    width: 44px;
+    height: 44px;
+  }
+
   /* Hero centrato su mobile */
   .hero-centered {
     display: flex;
