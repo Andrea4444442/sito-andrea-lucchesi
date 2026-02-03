@@ -1093,18 +1093,14 @@ button[type="submit"]:hover {
     text-align: center;
     order: 1;
     margin: 12px 10px 0;
-    padding: 12px 14px;
-    padding-right: 14px;
+    padding: 0;
+    padding-right: 0;
     flex-wrap: nowrap;
     column-gap: 0;
     row-gap: 6px;
     display: none;
     flex-direction: column;
     align-items: stretch;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     position: relative;
     z-index: 40;
   }
@@ -1120,8 +1116,8 @@ button[type="submit"]:hover {
   .nav a {
     display: block;
     width: 100%;
-    padding: 10px 12px;
-    color: #111111;
+    padding: 6px 0;
+    color: #ffffff;
   }
 
   .lang-select {
