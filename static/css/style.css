@@ -603,6 +603,41 @@ p {
   -webkit-backdrop-filter: blur(10px) saturate(120%);
 }
 
+.skills-section .container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.skills-section .row {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-section .col-12 {
+  width: 100%;
+}
+
+.skills-section .text-center {
+  text-align: center;
+}
+
+.skills-section .navy-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 12px;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.skills-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 0;
+}
+
 .kpi {
   font-size: 32px;
   font-weight: 900;
