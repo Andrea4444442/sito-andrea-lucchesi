@@ -583,6 +583,15 @@
       });
     }
 
+    const profileMore = document.querySelector(".profile-more");
+    if (profileMore) {
+      profileMore.addEventListener("toggle", () => {
+        if (profileMore.open) {
+          profileMore.scrollIntoView({ behavior: "smooth", block: "end" });
+        }
+      });
+    }
+
     applyLang(initialLang);
 
     const cvToggle = document.getElementById("cv-toggle");
