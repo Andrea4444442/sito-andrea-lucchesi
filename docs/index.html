@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Home - Landing Tesi/CV</title>
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
-  <link rel="stylesheet" href="static/css/style.css?v=20260123-4">
+  <link rel="stylesheet" href="static/css/style.css?v=20260123-14">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="page-home intro-locked">
@@ -84,8 +84,9 @@
               Non rappresenta ciò che sono “già diventato”, ma la direzione in cui sto andando.
             </p>
           </details>
-          <details class="profile-more mobile-only">
-            <summary data-i18n="hero.more">Leggi di più</summary>
+          <span class="readmore-anchor mobile-only" id="readmore-anchor-profile" aria-hidden="true"></span>
+          <button class="readmore-toggle mobile-only" type="button" data-readmore="profile" data-i18n="hero.more">Leggi di più</button>
+          <div class="readmore-content mobile-only" data-readmore-content="profile" hidden>
             <p class="muted" style="max-width: 860px; margin-bottom: 16px;" data-i18n="hero.p2">
               Mi sono formato con un percorso fortemente orientato all’analisi quantitativa, allo studio della performance aziendale e alla comprensione delle dinamiche economico-finanziarie che guidano le decisioni d’impresa. Durante gli studi ho lavorato su modelli finanziari, analisi dei dati e progetti di business planning, sviluppando un approccio rigoroso, strutturato e data-driven.
             </p>
@@ -98,7 +99,9 @@
             <p class="muted" style="max-width: 860px; margin-bottom: 0;" data-i18n="hero.p5">
               Non rappresenta ciò che sono “già diventato”, ma la direzione in cui sto andando.
             </p>
-          </details>
+          </div>
+          <button class="readmore-toggle readmore-toggle-bottom mobile-only" type="button" data-readmore-bottom="profile" data-i18n="hero.more" hidden>Leggi di più</button>
+          <span class="readmore-end mobile-only" id="readmore-end-profile" aria-hidden="true"></span>
         </div>
         <div class="btns-right hero-ctas" style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn primary" href="contatti/" data-i18n="hero.cta.contact">Contattami</a>
@@ -128,15 +131,18 @@
       <p class="muted desktop-only" style="margin-bottom: 0;" data-i18n="goal.p3">
         Nel lungo periodo, aspiro a sviluppare una visione completa dell’impresa e delle sue dinamiche, con l’ambizione di arrivare a ricoprire ruoli di responsabilità nella gestione finanziaria e strategica di un’azienda.
       </p>
-      <details class="profile-more mobile-only">
-        <summary data-i18n="hero.more">Leggi di più</summary>
+      <span class="readmore-anchor mobile-only" id="readmore-anchor-goal" aria-hidden="true"></span>
+      <button class="readmore-toggle mobile-only" type="button" data-readmore="goal" data-i18n="hero.more">Leggi di più</button>
+      <div class="readmore-content mobile-only" data-readmore-content="goal" hidden>
         <p class="muted" style="margin-bottom: 16px;" data-i18n="goal.p2">
           Nel breve periodo cerco opportunità Junior in ambito Corporate Finance e Financial Analysis, in contesti strutturati e ad alto standard professionale, dove poter apprendere sul campo e contribuire con un approccio analitico, rigoroso e data-driven.
         </p>
         <p class="muted" style="margin-bottom: 0;" data-i18n="goal.p3">
           Nel lungo periodo, aspiro a sviluppare una visione completa dell’impresa e delle sue dinamiche, con l’ambizione di arrivare a ricoprire ruoli di responsabilità nella gestione finanziaria e strategica di un’azienda.
         </p>
-      </details>
+      </div>
+      <button class="readmore-toggle readmore-toggle-bottom mobile-only" type="button" data-readmore-bottom="goal" data-i18n="hero.more" hidden>Leggi di più</button>
+      <span class="readmore-end mobile-only" id="readmore-end-goal" aria-hidden="true"></span>
     </section>
 
     <section class="skills-section" style="margin-bottom: 40px;">
@@ -160,18 +166,20 @@
 
     <section style="margin-bottom: 40px; text-align: center;">
       <h2 data-i18n="contacts.title">Contatti</h2>
-      <p style="color: var(--muted); font-size: 16px; display: inline-flex; gap: 14px; align-items: center; justify-content: center;">
-        <a class="accent-orange" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center;" aria-label="LinkedIn" title="LinkedIn">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05c4.02 0 4.77 2.64 4.77 6.07V21h-4v-5.05c0-1.2-.02-2.74-1.67-2.74c-1.67 0-1.93 1.3-1.93 2.65V21h-4V9Z"/>
-          </svg>
-        </a>
-        <a class="accent-orange" href="mailto:a.lucchesi1999@gmail.com" style="text-decoration: none; display: inline-flex; align-items: center;" aria-label="Email" title="Email">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2l-8 4.8l-8-4.8V6l8 4.8L20 6v2.2Z"/>
-          </svg>
-        </a>
-      </p>
+      <div class="contacts-icons-card">
+        <p class="contacts-icons">
+          <a class="accent-orange" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05c4.02 0 4.77 2.64 4.77 6.07V21h-4v-5.05c0-1.2-.02-2.74-1.67-2.74c-1.67 0-1.93 1.3-1.93 2.65V21h-4V9Z"/>
+            </svg>
+          </a>
+          <a class="accent-orange" href="mailto:a.lucchesi1999@gmail.com" aria-label="Email" title="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.2l-8 4.8l-8-4.8V6l8 4.8L20 6v2.2Z"/>
+            </svg>
+          </a>
+        </p>
+      </div>
     </section>
 
     <section style="margin-bottom: 40px; text-align: center;">
@@ -471,9 +479,11 @@
         btn.addEventListener("click", () => {
           const isFull = btn.textContent === btn.dataset.full;
           btn.textContent = isFull ? shortLabel(label) : btn.dataset.full;
+          updateSkillsCardHeight();
         });
         skillsLabels.appendChild(btn);
       });
+      updateSkillsCardHeight();
     };
     const skillsChart = skillsChartCtx
       ? new Chart(skillsChartCtx, {
@@ -531,10 +541,35 @@
         })
       : null;
 
+    const updateSkillsCardHeight = () => {
+      if (!skillsChartCtx) return;
+      const card = skillsChartCtx.closest(".skills-chart-card");
+      if (!card || !skillsLabels) return;
+      const labelsHeight = skillsLabels.offsetHeight || 0;
+      const chartHeight = skillsChartCtx.getBoundingClientRect().height || 420;
+      const extra = labelsHeight ? labelsHeight + 32 : 0;
+      card.style.height = "auto";
+      card.style.minHeight = `${chartHeight + extra}px`;
+      card.style.paddingBottom = `${extra}px`;
+      card.style.setProperty("--labels-height", `${extra}px`);
+      const cardRect = card.getBoundingClientRect();
+      const labelsRect = skillsLabels.getBoundingClientRect();
+      if (labelsRect.bottom > cardRect.bottom) {
+        const overflow = labelsRect.bottom - cardRect.bottom + 12;
+        card.style.minHeight = `${chartHeight + extra + overflow}px`;
+        card.style.paddingBottom = `${extra + overflow}px`;
+        card.style.setProperty("--labels-height", `${extra + overflow}px`);
+      }
+      requestAnimationFrame(() => {
+        card.style.height = `${card.scrollHeight}px`;
+      });
+    };
+
     if (skillsChartCtx) {
-      skillsChartCtx.parentElement.style.height = "420px";
       const initialLabels = skillsChartData[initialLang]?.labels || skillsChartData.it.labels;
       renderMobileLabels(initialLabels);
+      updateSkillsCardHeight();
+      window.addEventListener("resize", updateSkillsCardHeight);
     }
 
     const applyLang = (lang) => {
@@ -559,6 +594,7 @@
         skillsChart.data.datasets[0].data = chartData.values;
         skillsChart.update();
         renderMobileLabels(chartData.labels);
+        updateSkillsCardHeight();
       }
     };
 
@@ -613,20 +649,50 @@
       });
     }
 
-    const profileMore = document.querySelector(".profile-more");
-    if (profileMore) {
-      profileMore.addEventListener("toggle", () => {
-        if (profileMore.open) {
-          const lastParagraph = profileMore.querySelector("p:last-of-type");
-          const target = lastParagraph || profileMore;
-          requestAnimationFrame(() => {
-            setTimeout(() => {
-              target.scrollIntoView({ behavior: "smooth", block: "end" });
-            }, 50);
-          });
-        }
+    const isMobileScroll = window.matchMedia("(max-width: 600px)");
+    const scrollToTarget = (target) => {
+      if (!target) return;
+      const rect = target.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const offset = top - (window.innerHeight - 40);
+      window.scrollTo({ top: Math.max(offset, 0), behavior: "auto" });
+    };
+
+    const setupReadMore = (key) => {
+      const topToggle = document.querySelector(`.readmore-toggle[data-readmore="${key}"]`);
+      const bottomToggle = document.querySelector(`.readmore-toggle-bottom[data-readmore-bottom="${key}"]`);
+      const content = document.querySelector(`.readmore-content[data-readmore-content="${key}"]`);
+      const endMarker = document.getElementById(`readmore-end-${key}`);
+      if (!topToggle || !bottomToggle || !content || !endMarker) return;
+
+      const openReadMore = () => {
+        content.hidden = false;
+        topToggle.hidden = true;
+        bottomToggle.hidden = false;
+        const jump = () => scrollToTarget(endMarker);
+        jump();
+        setTimeout(jump, 150);
+        setTimeout(jump, 350);
+      };
+
+      const closeReadMore = () => {
+        content.hidden = true;
+        topToggle.hidden = false;
+        bottomToggle.hidden = true;
+      };
+
+      topToggle.addEventListener("click", () => {
+        if (!isMobileScroll.matches) return;
+        openReadMore();
       });
-    }
+      bottomToggle.addEventListener("click", () => {
+        if (!isMobileScroll.matches) return;
+        closeReadMore();
+      });
+    };
+
+    setupReadMore("profile");
+    setupReadMore("goal");
 
     const navToggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav");
