@@ -23,6 +23,12 @@
       </div>
     </div>
     <div class="header-left">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     <nav class="nav">
         <a href="https://andrea4444442.github.io/sito-andrea-lucchesi/" data-i18n="nav.home">Home</a>
         <a class="active" href="../chi-sono/" data-i18n="nav.about">I miei progetti</a>
@@ -273,6 +279,16 @@
             langOptions.hidden = true;
           }
         }
+      });
+    }
+
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+    if (navToggle && nav) {
+      nav.id = "site-nav";
+      navToggle.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("nav-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
       });
     }
 
