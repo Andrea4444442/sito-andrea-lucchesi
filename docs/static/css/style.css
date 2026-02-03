@@ -814,12 +814,12 @@ p {
   }
 
   .skills-chart-card {
-    padding-bottom: var(--labels-height);
-    min-height: calc(420px + var(--labels-height));
+    padding-bottom: 16px;
+    min-height: 0;
   }
 
   .skills-chart {
-    min-height: 420px;
+    min-height: 0;
   }
 
   .skills-labels {
@@ -832,6 +832,11 @@ p {
   .skills-label {
     max-width: 100%;
     text-align: center;
+  }
+
+  .skills-chart canvas {
+    height: 280px !important;
+    width: 100% !important;
   }
 }
 
