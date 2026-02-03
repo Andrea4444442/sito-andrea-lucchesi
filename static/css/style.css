@@ -638,6 +638,12 @@ p {
   padding: 8px 0 0;
 }
 
+.skills-chart-card {
+  max-width: 520px;
+  width: 100%;
+  padding: 20px;
+}
+
 .kpi {
   font-size: 32px;
   font-weight: 900;
