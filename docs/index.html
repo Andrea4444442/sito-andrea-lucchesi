@@ -587,7 +587,13 @@
     if (profileMore) {
       profileMore.addEventListener("toggle", () => {
         if (profileMore.open) {
-          profileMore.scrollIntoView({ behavior: "smooth", block: "end" });
+          const lastParagraph = profileMore.querySelector("p:last-of-type");
+          const target = lastParagraph || profileMore;
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: "smooth", block: "end" });
+            }, 50);
+          });
         }
       });
     }
