@@ -674,6 +674,20 @@ p {
   order: 1;
 }
 
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
 
 .skills-section .container {
   max-width: 860px;
