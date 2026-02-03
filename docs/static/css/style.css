@@ -128,6 +128,10 @@ a {
   border-radius: 2px;
 }
 
+.intro-locked .nav-toggle {
+  display: none;
+}
+
 .nav a {
   color: var(--muted);
   font-weight: 600;
@@ -925,7 +929,10 @@ button[type="submit"]:hover {
 
   .nav-toggle {
     display: inline-flex;
-    align-self: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
   }
 
   .lang-select {
