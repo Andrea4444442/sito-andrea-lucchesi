@@ -842,6 +842,11 @@ p {
     height: 280px !important;
     width: 100% !important;
   }
+
+  .skills-chart-card,
+  .skills-chart {
+    height: auto;
+  }
 }
 
 .kpi {

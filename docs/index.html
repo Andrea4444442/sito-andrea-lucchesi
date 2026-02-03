@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Home - Landing Tesi/CV</title>
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
-  <link rel="stylesheet" href="static/css/style.css?v=20260123-17">
+  <link rel="stylesheet" href="static/css/style.css?v=20260123-18">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="page-home intro-locked">
@@ -553,6 +553,13 @@
       card.style.minHeight = "";
       card.style.paddingBottom = "";
       card.style.setProperty("--labels-height", "0px");
+      if (isMobile.matches) {
+        skillsChartCtx.style.height = "280px";
+        skillsChartCtx.height = 280;
+        if (skillsChart) {
+          skillsChart.resize();
+        }
+      }
     };
 
     if (skillsChartCtx) {
