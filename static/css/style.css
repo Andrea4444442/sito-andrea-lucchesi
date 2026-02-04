@@ -822,7 +822,8 @@ p {
 @media (max-width: 600px) {
   .skills-chart-card {
     padding: 12px;
-    overflow: hidden;          /* evita che si “allunghi” visivamente */
+    height: 340px;      /* nuovo */
+    overflow: hidden;    /* nuovo */         
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -832,7 +833,7 @@ p {
   /* area chart: altezza controllata */
   #cs {
     width: 100% !important;
-    height: 240px !important;  /* <-- prima era 320: troppo */
+    height: 260px !important;  /* <-- prima era 320: troppo */
     display: block;
   }
 
