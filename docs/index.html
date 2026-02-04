@@ -468,27 +468,30 @@
     const shortLabel = (label) => label.split(" ")[0];
 
     const renderMobileLabels = (labels) => {
-      if (!skillsLabels) return;
-      if (!isMobile.matches) {
-        skillsLabels.innerHTML = "";
-        return;
-      }
-      skillsLabels.innerHTML = "";
-      labels.forEach((label) => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "skills-label";
-        btn.dataset.full = label;
-        btn.textContent = shortLabel(label);
-        btn.addEventListener("click", () => {
-          const isFull = btn.textContent === btn.dataset.full;
-          btn.textContent = isFull ? shortLabel(label) : btn.dataset.full;
-          updateSkillsCardHeight();
-        });
-        skillsLabels.appendChild(btn);
-      });
+  if (!skillsLabels) return;
+  if (!isMobile.matches) { skillsLabels.innerHTML = ""; return; }
+
+  skillsLabels.innerHTML = "";
+  labels.forEach((label) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "skills-label";
+    btn.dataset.full = label;
+    btn.dataset.short = shortLabel(label);
+    btn.textContent = btn.dataset.short;
+
+    btn.addEventListener("click", () => {
+      const isFull = btn.textContent === btn.dataset.full;
+      btn.textContent = isFull ? btn.dataset.short : btn.dataset.full;
       updateSkillsCardHeight();
-    };
+    });
+
+    skillsLabels.appendChild(btn);
+  });
+
+  updateSkillsCardHeight();
+};
+
     const skillsChart = skillsChartCtx
       ? new Chart(skillsChartCtx, {
           type: "radar",
