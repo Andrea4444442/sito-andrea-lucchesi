@@ -834,7 +834,7 @@ p {
 
   .skills-chart-card {
     padding: 12px;
-    height: 340px;
+    height: 300px !important;
     min-height: 0;
     overflow: hidden;
     display: flex;
@@ -842,15 +842,10 @@ p {
     align-items: center;
     justify-content: flex-start;
   }
-  
-  .skills-chart canvas {
-    height: 260px !important;
-    width: 100% !important;
+
+  .skills-chart {
+    min-height: 0;
   }
-  
-  /* elimina queste due righe */
-   /* .skills-chart-card,
-      .skills-chart { height: auto; } */
 
   .skills-labels {
     width: 100%;
@@ -867,8 +862,15 @@ p {
     padding: 6px 10px;
   }
 
+  .skills-chart canvas {
+    height: 200px !important;
+    width: 100% !important;
+  }
 
-
+  .skills-chart-card,
+  .skills-chart {
+    height: auto;
+  }
 }
 
 .kpi {

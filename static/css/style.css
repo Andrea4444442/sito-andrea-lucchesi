@@ -820,32 +820,39 @@ p {
 }
 
 @media (max-width: 600px) {
+  .skills-chart {
+    max-width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .skills-labels {
+    display: flex;
+  }
+
   .skills-chart-card {
     padding: 12px;
-    height: 340px;      /* nuovo */
-    overflow: hidden;    /* nuovo */         
+    height: 300px !important;
+    min-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
 
-  /* area chart: altezza controllata */
-  #cs {
-    width: 100% !important;
-    height: 260px !important;  /* <-- prima era 320: troppo */
-    display: block;
+  .skills-chart {
+    min-height: 0;
   }
 
   .skills-labels {
-    display: flex;
     width: 100%;
     padding: 0 12px;
     box-sizing: border-box;
+    overflow: hidden;
     margin-top: 12px;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .skills-label {
@@ -854,9 +861,17 @@ p {
     font-size: 12px;
     padding: 6px 10px;
   }
+
+  .skills-chart canvas {
+    height: 200px !important;
+    width: 100% !important;
+  }
+
+  .skills-chart-card,
+  .skills-chart {
+    height: auto;
+  }
 }
-
-
 
 .kpi {
   font-size: 32px;
@@ -1204,7 +1219,7 @@ button[type="submit"]:hover {
     width: 100%;
   }
 
-  .hero-text { 
+  .hero-text {
     min-width: auto;
     text-align: center;
   }
