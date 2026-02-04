@@ -834,7 +834,7 @@ p {
 
   .skills-chart-card {
     padding: 12px;
-    height: 440px;
+    height: 480px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -844,7 +844,7 @@ p {
 
   #cs {
     width: 100% !important;
-    height: 280px !important;
+    height: 320px !important;
     display: block;
   }
 
