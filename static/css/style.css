@@ -820,19 +820,21 @@ p {
 }
 
 @media (max-width: 600px) {
-  .skills-chart {
-    max-width: 100%;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+  .skills-chart-card {
+    padding: 12px;
     min-height: 0;
-    height: 320px; /* altezza del grafico su mobile */
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .skills-chart canvas {
+  /* altezza fissa del grafico su mobile */
+  #cs {
     width: 100% !important;
-    height: 100% !important;
+    height: 320px !important;
+    display: block;
   }
 
   .skills-labels {
@@ -852,16 +854,6 @@ p {
     text-align: center;
     font-size: 12px;
     padding: 6px 10px;
-  }
-
-  .skills-chart-card {
-    padding: 12px;
-    min-height: 0;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
   }
 }
 
