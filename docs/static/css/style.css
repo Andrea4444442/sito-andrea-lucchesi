@@ -834,13 +834,18 @@ p {
 
   .skills-chart-card {
     padding: 12px;
-    height: 300px !important;
+    height: auto !important;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .skills-chart-card canvas {
+    height: 260px !important;
+    width: 100% !important;
   }
 
   .skills-chart {
