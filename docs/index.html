@@ -469,7 +469,10 @@
 
     const renderMobileLabels = (labels) => {
   if (!skillsLabels) return;
-  if (!isMobile.matches) { skillsLabels.innerHTML = ""; return; }
+  if (!isMobile.matches) {
+    skillsLabels.innerHTML = "";
+    return;
+  }
 
   skillsLabels.innerHTML = "";
   labels.forEach((label) => {
@@ -483,13 +486,10 @@
     btn.addEventListener("click", () => {
       const isFull = btn.textContent === btn.dataset.full;
       btn.textContent = isFull ? btn.dataset.short : btn.dataset.full;
-      updateSkillsCardHeight();
     });
 
     skillsLabels.appendChild(btn);
   });
-
-  updateSkillsCardHeight();
 };
 
     const skillsChart = skillsChartCtx
@@ -557,8 +557,6 @@
       card.style.paddingBottom = "";
       card.style.setProperty("--labels-height", "0px");
       if (isMobile.matches) {
-        skillsChartCtx.style.height = "280px";
-        skillsChartCtx.height = 280;
         if (skillsChart) {
           skillsChart.resize();
         }
